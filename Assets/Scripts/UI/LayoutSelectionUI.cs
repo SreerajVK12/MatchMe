@@ -5,22 +5,28 @@ using UnityEngine.UI;
 
 public class LayoutSelectionUI : MonoBehaviour
 {
-    public ToggleGroup _toggleGroup;
-    public Toggle _selectedToggle;
+    public GameObject LevelGroup;
+    private ToggleGroup _toggleGroup;
+    private Toggle _selectedToggle;
 
     void Start()
     {
-        //foreach (var toggle in _toggleGroup.GetComponentsInChildren<Toggle>())
-        //{
-        //    // Subscribe to the onValueChanged event
-        //    toggle.onValueChanged.AddListener((isOn) =>
-        //    {
-        //        if (isOn)
-        //        {
-        //            OnToggleSelected(toggle);
-        //        }
-        //    });
-        //}
+        var groupHandler = LevelGroup.GetComponent<LevelGroupHandler>();
+        _toggleGroup = LevelGroup.GetComponent<ToggleGroup>();
+
+        groupHandler.GenerateLevelData();
+
+        foreach (var toggle in _toggleGroup.GetComponentsInChildren<Toggle>())
+        {
+            // Subscribe to the onValueChanged event
+            toggle.onValueChanged.AddListener((isOn) =>
+            {
+                if (isOn)
+                {
+                    OnToggleSelected(toggle);
+                }
+            });
+        }
     }
 
     void OnToggleSelected(Toggle selectedToggle)
@@ -35,6 +41,9 @@ public class LayoutSelectionUI : MonoBehaviour
         Debug.Log("OnClickOfPlayButton");
 
         Debug.Log("Selected Toggle: " + _selectedToggle.name);
+
+        var levelData = _selectedToggle.gameObject.GetComponent<SetLevelData>();
+        GamePlayManager.Instance.GenerateGrid(levelData);
 
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 

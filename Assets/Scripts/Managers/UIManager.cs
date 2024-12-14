@@ -58,7 +58,6 @@ public class UIManager : MonoBehaviour
                 if (!_uiScreens.ContainsKey(newScreen))
                 {
                     _uiScreens.Add(newScreen, home);
-                    //_uiScreens.Add(activeScreen, Instantiate(ResourceCtrl.instance.ResourceData.LevelSelectionScreen));
                 }
 
 
@@ -68,7 +67,6 @@ public class UIManager : MonoBehaviour
                 if (!_uiScreens.ContainsKey(newScreen))
                 {
                     _uiScreens.Add(newScreen, layout);
-                    //_uiScreens.Add(activeScreen, Instantiate(ResourceCtrl.instance.ResourceData.LevelSelectionScreen));
                 }
 
                 break;
@@ -77,7 +75,6 @@ public class UIManager : MonoBehaviour
                 if (!_uiScreens.ContainsKey(newScreen))
                 {
                     _uiScreens.Add(newScreen, game);
-                    //_uiScreens.Add(activeScreen, Instantiate(ResourceCtrl.instance.ResourceData.LevelSelectionScreen));
                 }
                 break;
             case UIScreens.PAUSE:
@@ -85,7 +82,6 @@ public class UIManager : MonoBehaviour
                 if (!_uiScreens.ContainsKey(newScreen))
                 {
                     _uiScreens.Add(newScreen, pause);
-                    //_uiScreens.Add(activeScreen, Instantiate(ResourceCtrl.instance.ResourceData.LevelSelectionScreen));
                 }
                 break;
             case UIScreens.LEVELCOMPLETE:
@@ -93,7 +89,6 @@ public class UIManager : MonoBehaviour
                 if (!_uiScreens.ContainsKey(newScreen))
                 {
                     _uiScreens.Add(newScreen, complete);
-                    //_uiScreens.Add(activeScreen, Instantiate(ResourceCtrl.instance.ResourceData.LevelSelectionScreen));
                 }
 
                 break;

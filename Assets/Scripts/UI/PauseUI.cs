@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class PauseUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void OnClickOfCloseButton()
     {
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
@@ -23,6 +17,10 @@ public class PauseUI : MonoBehaviour
     {
         Debug.Log("OnClickOfQuitButton");
 
+        GamePlayManager.Instance.ClearSaveData();
+
+        GamePlayManager.Instance.DestroyGrid();
+
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
         UIManager.Instance.DisableScreen(UIScreens.GAME);
@@ -34,6 +32,10 @@ public class PauseUI : MonoBehaviour
         Debug.Log("SaveAndQuitButton");
 
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
+
+        GamePlayManager.Instance.SaveData();
+
+        GamePlayManager.Instance.DestroyGrid();
 
         UIManager.Instance.DisableScreen(UIScreens.GAME);
         UIManager.Instance.EnableScreen(UIScreens.HOME);

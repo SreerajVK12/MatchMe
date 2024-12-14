@@ -10,6 +10,10 @@ public class LevelCompleteUI : MonoBehaviour
 
     public void OnClickOfHomeButton()
     {
+        GamePlayManager.Instance.DestroyGrid();
+
+        GamePlayManager.Instance.ClearSaveData();
+
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
         UIManager.Instance.EnableScreen(UIScreens.HOME);

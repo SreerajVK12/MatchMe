@@ -28,9 +28,31 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
+        DataManager.Instance.DataSource.LoadAllSounds();
     }
 
     public void PlayOneShot(Sounds sound)
     {
+        string audioname = GetAudioName(sound);
+
+        AudioClip audioClip = DataManager.Instance.DataSource.GetAudioByName(audioname);
+
+        if (audioClip != null)
+        {
+            _sfxSource.PlayOneShot(audioClip);
+        }
+    }
+
+    private string GetAudioName(Sounds sound)
+    {
+        switch (sound)
+        {
+            case Sounds.Button_Click: return "ButtonClick";
+            case Sounds.CardFlip: return "HideCard";
+            case Sounds.FlipFail: return "ShowCard";
+            case Sounds.FlipSucess: return "CardMatch";
+            case Sounds.GameOver: return "GameOver";
+            default: return "";
+        }
     }
 }

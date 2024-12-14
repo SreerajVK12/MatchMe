@@ -8,6 +8,16 @@ public class HomeUI : MonoBehaviour
 
     private void OnEnable()
     {
+        JSONObject gameData = SaveDataLocalManager.Instance.GetValue("GameData");
+
+        if (gameData != null && gameData.IsNull)
+        {
+            resumeButton.SetActive(false);
+        }
+        else
+        {
+            resumeButton.SetActive(false);
+        }
     }
 
     public void OnClickOfStartButton()
@@ -22,6 +32,8 @@ public class HomeUI : MonoBehaviour
     public void OnClickOfResumeButton()
     {
         Debug.Log("OnClickOfResumeButton");
+
+        GamePlayManager.Instance.LoadGame();
 
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
