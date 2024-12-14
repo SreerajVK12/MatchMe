@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d736847d96d2b034aa9f341c00a6a4cb, type: 3}
   m_Name: Card_4
   m_EditorClassIdentifier: 
-  Id: 4
+  Id: 3
   Icon: {fileID: 21300000, guid: 0fac0ec2caff9bf43af9adecfa4c6678, type: 3}

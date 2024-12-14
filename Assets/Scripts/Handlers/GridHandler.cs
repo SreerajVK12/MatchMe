@@ -113,13 +113,9 @@ public class GridHandler : MonoBehaviour
     {
         for (int i = list.Count - 1; i > 0; i--)
         {
-            int randomIndex;
-            do
-            {
-                randomIndex = Random.Range(0, i + 1);
+            int randomIndex = Random.Range(0, i + 1); // Random index between 0 and i (inclusive)
 
-            } while (Mathf.Abs(randomIndex - i) <= 1); // Ensure the shuffled value is not near the original index
-
+            // Swap the current element with the random index
             int temp = list[i];
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
