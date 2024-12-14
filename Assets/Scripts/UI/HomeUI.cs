@@ -10,13 +10,13 @@ public class HomeUI : MonoBehaviour
     {
         JSONObject gameData = SaveDataLocalManager.Instance.GetValue("GameData");
 
-        if (gameData == null && gameData.IsNull)
+        if (gameData != null && !gameData.IsNull)
         {
-            resumeButton.SetActive(false);
+            resumeButton.SetActive(true);
         }
         else
         {
-            resumeButton.SetActive(true);
+            resumeButton.SetActive(false);
         }
     }
 

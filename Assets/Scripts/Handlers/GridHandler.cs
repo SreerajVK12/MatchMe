@@ -90,7 +90,7 @@ public class GridHandler : MonoBehaviour
             cardIndex++;
         }
 
-        _iRemainingCards = cardIndex;
+        _iRemainingCards = bSavedData ? _iRemainingCards  : cardIndex;
     }
 
     private void GenerateCardValues(int iRows, int iColumns)
