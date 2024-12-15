@@ -38,10 +38,6 @@ public class LayoutSelectionUI : MonoBehaviour
 
     public void OnClickOfPlayButton()
     {
-        Debug.Log("OnClickOfPlayButton");
-
-        Debug.Log("Selected Toggle: " + _selectedToggle.name);
-
         var levelData = _selectedToggle.gameObject.GetComponent<SetLevelData>();
         GamePlayManager.Instance.GenerateGrid(levelData);
 

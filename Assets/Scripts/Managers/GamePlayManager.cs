@@ -65,8 +65,6 @@ public class GamePlayManager : MonoBehaviour
             UpdateScore();
 
             GridHandler.ReduceCardCount();
-
-            Debug.Log("Match Found");
         }
         else
         {

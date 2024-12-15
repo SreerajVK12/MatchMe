@@ -9,14 +9,10 @@ public class PauseUI : MonoBehaviour
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
         UIManager.Instance.DisableScreen(UIScreens.PAUSE);
-
-        Debug.Log("OnClickOfCloseButton");
     }
 
     public void OnClickOfQuitButton()
     {
-        Debug.Log("OnClickOfQuitButton");
-
         GamePlayManager.Instance.ClearSaveData();
 
         GamePlayManager.Instance.DestroyGrid();
@@ -29,8 +25,6 @@ public class PauseUI : MonoBehaviour
 
     public void SaveAndQuitButton()
     {
-        Debug.Log("SaveAndQuitButton");
-
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
         GamePlayManager.Instance.SaveData();

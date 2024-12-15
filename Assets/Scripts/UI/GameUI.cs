@@ -7,8 +7,6 @@ public class GameUI : MonoBehaviour
 
     public void OnClickOfPauseButton()
     {
-        Debug.Log("OnClickOfPauseButton");
-
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
         UIManager.Instance.EnableScreen(UIScreens.PAUSE);

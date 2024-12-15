@@ -22,8 +22,6 @@ public class HomeUI : MonoBehaviour
 
     public void OnClickOfStartButton()
     {
-        Debug.Log("OnClickOfStartButton");
-
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
         UIManager.Instance.EnableScreen(UIScreens.LAYOUTSELECTION);
@@ -31,8 +29,6 @@ public class HomeUI : MonoBehaviour
 
     public void OnClickOfResumeButton()
     {
-        Debug.Log("OnClickOfResumeButton");
-
         GamePlayManager.Instance.LoadGame();
 
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);

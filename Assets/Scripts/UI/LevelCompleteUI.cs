@@ -17,7 +17,5 @@ public class LevelCompleteUI : MonoBehaviour
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);
 
         UIManager.Instance.EnableScreen(UIScreens.HOME);
-
-        Debug.Log("OnClickOfHomeButton");
     }
 }
