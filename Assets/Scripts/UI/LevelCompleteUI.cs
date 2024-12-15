@@ -9,7 +9,7 @@ public class LevelCompleteUI : MonoBehaviour
     {
         SoundManager.Instance.PlayOneShot(Sounds.GameOver);
 
-        _score.text = "Score : " + GamePlayManager.Instance.Score.ToString();
+        _score.text = "Score : " + ScoreManager.Instance.GetScore().ToString();
     }
 
     public void OnClickOfHomeButton()

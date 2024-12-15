@@ -12,8 +12,6 @@ public class GamePlayManager : MonoBehaviour
 
     private Card _lastSelectedCard;
 
-    public int Score { get; private set; }
-
     private void Awake()
     {
         if (Instance == null)
@@ -28,11 +26,11 @@ public class GamePlayManager : MonoBehaviour
 
     public void GenerateGrid(SetLevelData levelData)
     {
-
         _lastSelectedCard = null;
-        Score = 0;
 
-        UpdateScore(Score);
+        ScoreManager.Instance.ResetScore();
+
+        UIManager.Instance.UpdateScoreInUI();
 
         GridHandler.GenerateGrid(levelData);
     }
@@ -80,9 +78,9 @@ public class GamePlayManager : MonoBehaviour
 
     public void UpdateScore(int iScore = 1000)
     {
-        Score += iScore;
+        ScoreManager.Instance.UpdateScore(iScore);
 
-        UIManager.Instance.UpdateScoreInUI(Score);
+        UIManager.Instance.UpdateScoreInUI();
     }
 
     public void SaveData()

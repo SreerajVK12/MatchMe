@@ -103,11 +103,11 @@ public class UIManager : MonoBehaviour
         _uiScreens[currentScreen].SetActive(false);
     }
 
-    public void UpdateScoreInUI(int score)
+    public void UpdateScoreInUI()
     {
         if (_uiScreens.ContainsKey(UIScreens.GAME))
         {
-            _uiScreens[UIScreens.GAME].GetComponent<GameUI>().UpdateScore(score);
+            _uiScreens[UIScreens.GAME].GetComponent<GameUI>().UpdateScore(ScoreManager.Instance.GetScore());
         }
     }
 

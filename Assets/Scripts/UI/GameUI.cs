@@ -14,6 +14,6 @@ public class GameUI : MonoBehaviour
 
     public void UpdateScore(int iScore)
     {
-        _scoreText.text = "Score : " + iScore.ToString();
+        _scoreText.text = "Score : " + iScore.ToString("D4");
     }
 }

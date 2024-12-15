@@ -148,7 +148,7 @@ public class GridHandler : MonoBehaviour
     {
         JSONObject gameData = new JSONObject();
 
-        gameData.AddField("score", GamePlayManager.Instance.Score);
+        gameData.AddField("score", ScoreManager.Instance.GetScore());
         gameData.AddField("RowCount", _selectedlevelData.rowCount);
         gameData.AddField("ColumnCount", _selectedlevelData.columnCount);
         gameData.AddField("Padding", _selectedlevelData.Padding);
