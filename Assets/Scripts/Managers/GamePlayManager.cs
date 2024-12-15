@@ -28,9 +28,11 @@ public class GamePlayManager : MonoBehaviour
 
     public void GenerateGrid(SetLevelData levelData)
     {
-        _lastSelectedCard = null;
 
-        UpdateScore(0);
+        _lastSelectedCard = null;
+        Score = 0;
+
+        UpdateScore(Score);
 
         GridHandler.GenerateGrid(levelData);
     }

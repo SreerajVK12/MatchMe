@@ -39,6 +39,7 @@ public class LayoutSelectionUI : MonoBehaviour
     public void OnClickOfPlayButton()
     {
         var levelData = _selectedToggle.gameObject.GetComponent<SetLevelData>();
+
         GamePlayManager.Instance.GenerateGrid(levelData);
 
         SoundManager.Instance.PlayOneShot(Sounds.Button_Click);

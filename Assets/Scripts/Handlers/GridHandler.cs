@@ -175,6 +175,9 @@ public class GridHandler : MonoBehaviour
 
         JSONObject carddata = (JSONObject)gameData["carddatas"];
 
+        int iScore = (int)gameData["score"].i;
+        GamePlayManager.Instance.UpdateScore(iScore);
+
         int rowCount = (int)gameData["RowCount"].i;
         int columnCount = (int)gameData["ColumnCount"].i;
         _iRemainingCards = rowCount * columnCount;

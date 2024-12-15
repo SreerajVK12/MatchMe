@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class LevelCompleteUI : MonoBehaviour
 {
+    public TextMeshProUGUI _score;
+
     private void OnEnable()
     {
         SoundManager.Instance.PlayOneShot(Sounds.GameOver);
+
+        _score.text = "Score : " + GamePlayManager.Instance.Score.ToString();
     }
 
     public void OnClickOfHomeButton()
